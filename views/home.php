@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Chat</title>
 </head>
 
 <body>
     <main class="h-screen">
-        <nav class="h-14 bg-gray-800 flex items-center justify-between px-2">
+        <nav class="h-16 bg-gray-900 flex items-center justify-between p-2">
             <a href="signup.php">
                 <ion-icon name="log-out-outline" class="text-3xl text-white"></ion-icon>
             </a>
@@ -17,33 +18,45 @@
                 <?php require_once '../controllers/homeController/navInfo.php'; ?>
             </div>
         </nav>
-        <section id="global-content" class="bg-red-400 h-[92%] grid grid-cols-3">
+        <section id="global-content" class="bg-gray-800 h-[90.9%] grid grid-cols-3">
             <!-- contacts list -->
-            <section id="content" class="h-full col-span-1 overflow-auto">
-
+            <section id="content" class="h-full col-span-1 overflow-auto px-2">
+                <?php require_once '../controllers/homeController/contactsList.php'; ?>
             </section>
-    
+
             <!-- discussion section -->
-            <section class="h-full col-span-2 bg-green-300 flex flex-col justify-between">
-
-                <!-- conversation section -->
-                <main id="conversation-section" class="flex flex-col gap-2 overflow-auto bg-green-800 h-full p-2">
-                    <div class="bg-green-400 p-2 self-end rounded-lg rounded-tr-none">
-                        Hello, My friend I hope that you are okey!
+            <article id="discussionContainer" class="col-span-2">
+                <!-- discussionSection  -->
+                <section id="discussionSection" class=" h-full bg-green-300 flex flex-col justify-between">
+                    <!-- conversation section -->
+                    <div contactId="$user->user_id" class="contactList bg-red-500 h-20 w-full flex items-center gap-1 border-b border-solid  p-2 cursor-pointer">
+                        <div class="h-14 w-14 bg-black rounded-full" style="background-image: url('../images/$user->avatar');background-size: cover;"></div>
+                        <p class="text-white">$user->username</p>
                     </div>
-                    <div class="bg-gray-200 p-2 self-start rounded-lg rounded-tl-none">
-                        hello world!
-                    </div>
-                </main>
 
-                <!-- send message section -->
-                <form id="send-message-form" class="bg-gray-800 h-14 py-2 px-8 flex gap-2">
-                    <input id="send-message" name="send-message" type="text" placeholder="Type a message" class="w-full border border-gray-500 py-2 px-6">
-                    <button type="submit" class="w-10 h-10 rounded-full bg-black flex justify-center items-center cursor-pointer">
-                        <ion-icon name="paper-plane-outline" class="text-white text-xl"></ion-icon>
-                    </button>
-                </form>
-            </section>
+                    <main id="conversation-section" class="flex flex-col gap-2 overflow-auto bg-green-800 h-full p-2">
+                        <div class="bg-green-400 p-2 self-end rounded-lg rounded-tr-none">
+                            Hello, My friend I hope that you are okey!
+                        </div>
+                        <div class="bg-gray-200 p-2 self-start rounded-lg rounded-tl-none">
+                            hello world!
+                        </div>
+                    </main>
+
+                    <!-- send message section -->
+                    <form id="send-message-form" class="bg-gray-900 h-14 py-2 px-8 flex gap-2">
+                        <input id="send-message" name="send-message" type="text" placeholder="Type a message" class="w-full border border-gray-500 py-2 px-6">
+                        <button type="submit" class="w-10 h-10 rounded-full bg-black flex justify-center items-center cursor-pointer">
+                            <ion-icon name="paper-plane-outline" class="text-white text-xl"></ion-icon>
+                        </button>
+                    </form>
+                </section>
+
+                <!-- Nothing  -->
+                <section id="nothing" class="HIDDEN h-full bg-green-800 flex flex-col justify-center items-center ">
+                    <img src="../images/message-circle.svg" alt="" class="h-[30%] w-[18%] opacity-15 ">
+                </section>
+            </article>
         </section>
     </main>
     <!-- ionicicons script -->
@@ -51,6 +64,9 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <!-- tailwind cdn -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- local scripts -->
+    <script src="../views/scripts/contactId.js"></script>
+    <script src="../views/scripts/toggle.js"></script>
 </body>
 
 </html>

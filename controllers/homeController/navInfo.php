@@ -1,6 +1,5 @@
 <?php
 session_start();
-$_SESSION['user-id'];
 require_once '../models/UsersDB.php'; 
 
 $users = $users_database->displayUserById($_SESSION['user-id']);
