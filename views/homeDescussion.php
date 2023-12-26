@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <div id="contactId" contactId="<?php echo $_POST['contactId'];?>"></div>
     <main class="h-screen">
         <nav class="h-16 bg-gray-900 flex items-center justify-between p-2">
             <a href="signup.php">
@@ -27,10 +28,25 @@
             <!-- discussion section -->
             <article id="discussionContainer" class="col-span-2">
                 <!-- discussionSection  -->
-              
-                <!-- Nothing  -->
-                <section id="nothing" class="h-full bg-green-800 flex flex-col justify-center items-center ">
-                    <img src="../images/message-circle.svg" alt="" class="h-[30%] w-[18%] opacity-15 ">
+                <section id="discussionSection" class=" h-full bg-green-300 flex flex-col justify-between">
+                    <!-- conversation section -->
+                    <?php require_once '../controllers/homeController/contactedInfo.php';?>
+                    <main id="conversation-section" class="flex flex-col gap-2 overflow-auto bg-green-800 h-full p-2">
+                        <div class="bg-green-400 p-2 self-end rounded-lg rounded-tr-none">
+                            Hello, My friend I hope that you are okey!
+                        </div>
+                        <div class="bg-gray-200 p-2 self-start rounded-lg rounded-tl-none">
+                            hello world!
+                        </div>
+                    </main>
+
+                    <!-- send message section -->
+                    <form id="send-message-form" class="bg-gray-900 h-14 py-2 px-8 flex gap-2">
+                        <input id="send-message" name="send-message" type="text" placeholder="Type a message" class="w-full border border-gray-500 py-2 px-6">
+                        <button type="submit" class="w-10 h-10 rounded-full bg-black flex justify-center items-center cursor-pointer">
+                            <ion-icon name="paper-plane-outline" class="text-white text-xl"></ion-icon>
+                        </button>
+                    </form>
                 </section>
             </article>
         </section>
@@ -42,6 +58,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- local scripts -->
     <script src="../views/scripts/contactId.js"></script>
+    <script src="../views/scripts/contactedInfo.js"></script>
 </body>
 
 </html>
