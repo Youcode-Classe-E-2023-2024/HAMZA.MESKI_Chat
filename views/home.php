@@ -1,7 +1,3 @@
-<?php
-session_start();
-$_SESSION['user-id'];
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,12 +9,18 @@ $_SESSION['user-id'];
 
 <body>
     <main class="h-screen">
-        <nav class="h-14 bg-gray-800">
-            <a href="#">logout</a>
+        <nav class="h-14 bg-gray-800 flex items-center justify-between px-2">
+            <a href="signup.php">
+                <ion-icon name="log-out-outline" class="text-3xl text-white"></ion-icon>
+            </a>
+            <div class="flex items-center gap-1">
+                <?php require_once '../controllers/homeController/navInfo.php'; ?>
+            </div>
         </nav>
         <section id="global-content" class="bg-red-400 h-[92%] grid grid-cols-3">
             <!-- contacts list -->
             <section id="content" class="h-full col-span-1 overflow-auto">
+
             </section>
     
             <!-- discussion section -->

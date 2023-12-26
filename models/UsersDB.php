@@ -96,7 +96,7 @@ class UsersDB {
 
     public function displayUserById($userId) {
         try {
-            $stmt = $this->pdo->prepare("SELECT * FROM users WHERE id = :userId");
+            $stmt = $this->pdo->prepare("SELECT * FROM users WHERE user_id = :userId");
             $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
     
             // Execute the statement
