@@ -1,3 +1,9 @@
+<?php 
+// session_start();
+// echo $_SESSION['user-id']; 
+// echo '<br>'; 
+// echo $_POST['contactId'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,8 +47,9 @@
                     </main>
 
                     <!-- send message section -->
-                    <form id="send-message-form" class="bg-gray-900 h-14 py-2 px-8 flex gap-2">
-                        <input id="send-message" name="send-message" type="text" placeholder="Type a message" class="w-full border border-gray-500 py-2 px-6">
+                    <form id="send_message_form" class="bg-gray-900 h-14 py-2 px-8 flex gap-2">
+                        <input type="hidden" name="contactId" value="<?php echo $_POST['contactId'] ?>">
+                        <input id="message_input" name="message_input" type="text" placeholder="Type a message" class="w-full border border-gray-500 py-2 px-6">
                         <button type="submit" class="w-10 h-10 rounded-full bg-black flex justify-center items-center cursor-pointer">
                             <ion-icon name="paper-plane-outline" class="text-white text-xl"></ion-icon>
                         </button>
@@ -59,6 +66,7 @@
     <!-- local scripts -->
     <script src="../views/scripts/contactId.js"></script>
     <script src="../views/scripts/contactedInfo.js"></script>
+    <script src="../views/scripts/sendMessage.js"></script>
 </body>
 
 </html>
