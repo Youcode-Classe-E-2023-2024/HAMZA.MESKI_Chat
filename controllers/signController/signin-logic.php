@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
                 // echo '</pre>';
 
                 // log user in
-                header('location: http://localhost/HAMZA.MESKI_Chat/views/home.php');
+                header('location: '.ROOT_URL.'views/home.php');
             } else {
                 $_SESSION['signin'] = "Please check your input";
             }
@@ -41,11 +41,11 @@ if (isset($_POST['submit'])) {
     // if any problem, redirect back to signin page with login data
     if (isset($_SESSION['signin'])) {
         $_SESSION['signin-data'] = $_POST;
-        header('location:  http://localhost/HAMZA.MESKI_Chat/views/signin.php');
+        header('location: '.ROOT_URL.'views/signin.php');
         die();
     }
 } else {
-    header('location:  http://localhost/HAMZA.MESKI_Chat/views/signin.php');
+    header('location:  '.ROOT_URL.'views/signin.php');
     die();
 }
 ?>
