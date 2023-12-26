@@ -37,13 +37,8 @@
                 <section id="discussionSection" class=" h-full bg-green-300 flex flex-col justify-between">
                     <!-- conversation section -->
                     <?php require_once '../controllers/homeController/contactedInfo.php';?>
-                    <main id="conversation-section" class="flex flex-col gap-2 overflow-auto bg-green-800 h-full p-2">
-                        <div class="bg-green-400 p-2 self-end rounded-lg rounded-tr-none">
-                            Hello, My friend I hope that you are okey!
-                        </div>
-                        <div class="bg-gray-200 p-2 self-start rounded-lg rounded-tl-none">
-                            hello world!
-                        </div>
+                    <main id="conversation_section" class="flex flex-col gap-2 overflow-auto bg-green-800 h-[500px] p-2">
+
                     </main>
 
                     <!-- send message section -->
@@ -67,6 +62,7 @@
     <script src="../views/scripts/contactId.js"></script>
     <script src="../views/scripts/contactedInfo.js"></script>
     <script src="../views/scripts/sendMessage.js"></script>
+    <!-- <script src="../views/scripts/conversationSection.js"></script> -->
 </body>
 
 </html>

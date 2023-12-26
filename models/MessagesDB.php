@@ -41,9 +41,14 @@ class MessagesDB {
         }
     }
 
-    public function displayMessages() {
+    public function getMessagesBySenderReceiver($sender_id, $receiver_id) {
         try {
-            $stmt = $this->pdo->prepare("SELECT * FROM messages");
+            $stmt = $this->pdo->prepare(" SELECT * FROM messages 
+            WHERE (sender_id = :sender_id AND receiver_id = :receiver_id)
+            OR (sender_id = :receiver_id AND receiver_id = :sender_id)");
+    
+            $stmt->bindParam(':sender_id', $sender_id, PDO::PARAM_INT);
+            $stmt->bindParam(':receiver_id', $receiver_id, PDO::PARAM_INT);
     
             // Execute the statement
             $stmt->execute();
@@ -53,7 +58,7 @@ class MessagesDB {
     
             return $result;
         } catch (PDOException $e) {
-            die('Display failed: ' . $e->getMessage());
+            die('Query failed: ' . $e->getMessage());
         }
     }
 }
