@@ -71,8 +71,19 @@
 
                     </main>
                     <!-- Add friend section -->
-                    <main id="add_friend_section" class=" absolute h-full w-full top-0 left-0 bg-yellow-400">
-                        
+                    <main id="add_friend_section" class=" absolute h-full w-full top-0 left-0 bg-gray-800">
+                        <form id="add_friend_form" class="max-w-md mx-auto bg-green-500 p-8 rounded-md shadow-md mt-8">
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Select Friends:</label>
+                            <input type="text" placeholder="Friend's name" class="w-full p-2 rounded-md border border-gray-300 mb-4">
+
+                            <main class="overflow-auto h-[200px] mb-4">
+                                <div id="addFriend_section" class="bg-green-400 "></div>
+                            </main>
+
+                            <button class="w-full bg-green-800 text-white p-2 rounded-md hover:bg-green-600 focus:outline-none focus:shadow-outline-green active:bg-green-700">
+                                Add
+                            </button>
+                        </form>
                     </main>
                 </section>
             </article>
