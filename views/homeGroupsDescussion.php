@@ -66,12 +66,13 @@
                     </form>
 
                     <!-- Group members section -->
-                    <main id="group_members_section" class=" absolute h-full w-full top-0 left-0 overflow-auto bg-red-400">
-                        
+                    <div id="groupId" groupId="<?php echo $_POST['groupId'] ?>"></div>
+                    <main id="group_members_section" class="HIDDEN absolute h-full w-full top-0 left-0 overflow-auto bg-red-400">
+
                     </main>
                     <!-- Add friend section -->
-                    <main id="add_friend_section" class="HIDDEN absolute h-full w-full top-0 left-0 bg-yellow-400">
-
+                    <main id="add_friend_section" class=" absolute h-full w-full top-0 left-0 bg-yellow-400">
+                        
                     </main>
                 </section>
             </article>
@@ -85,6 +86,7 @@
     <!-- local scripts -->
     <script src="../views/scripts/contactId.js"></script>
     <script src="../views/scripts/createGroup.js"></script>
+    <script src="../views/scripts/handleGroup.js"></script>
 </body>
 
 </html>

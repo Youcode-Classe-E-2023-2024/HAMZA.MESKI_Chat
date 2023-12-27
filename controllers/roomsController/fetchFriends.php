@@ -1,5 +1,6 @@
 <?php
-require_once '../models/UsersDB.php';
+session_start();
+require_once '../../models/UsersDB.php';
 
 $users = $users_database->displayUsers();
 $html = '';
