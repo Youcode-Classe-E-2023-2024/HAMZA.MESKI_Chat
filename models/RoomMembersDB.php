@@ -39,7 +39,23 @@ class RoomMembersDB {
             die('Insert failed: ' . $e->getMessage());
         }
     }
-
+    
+    public function displayRoomMembers($roomId){
+        try {
+            $stmt = $this->pdo->prepare("SELECT * FROM room_members WHERE room_id = :roomId");
+            $stmt->bindParam(':roomId', $roomId, PDO::PARAM_INT);
+    
+            // Execute the statement
+            $stmt->execute();
+    
+            // Fetch the user as an associative array
+            $user = $stmt->fetchAll(PDO::FETCH_OBJ);
+    
+            return $user;
+        } catch (PDOException $e) {
+            die('Display failed: ' . $e->getMessage());
+        }
+    }  
 
 }
 

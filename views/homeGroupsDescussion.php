@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +15,7 @@
                 <a href="signup.php">
                     <ion-icon name="log-out-outline" class="text-3xl text-white"></ion-icon>
                 </a>
-                <a href="homeDescussion.php" class="text-white">back</a>
+                <a href="homeGroups.php" class="text-white">back</a>
             </div>
             <div class="relative">
                 <div id="menu_list" class="flex items-center gap-1 cursor-pointer">
@@ -46,25 +45,34 @@
 
             <!-- discussion section -->
             <article id="discussionContainer" class="col-span-2">
+
+                <main class="bg-gray-800 text-white h-12 flex items-center p-2 border-l">
+                    <p id="group_members_button" class="bg-gray-900 p-1 rounded-md cursor-pointer mr-2 border">Group members</p>
+                    <p id="add_friend_button" class="bg-green-500 p-1 rounded-md cursor-pointer border">Add friend</p>
+                </main>
                 <!-- discussionSection  -->
-              
-                <section id="nothing" class="relative h-full w-full bg-green-800 flex flex-col justify-center items-center ">
+                <section id="nothing" class="relative h-[590px] w-full bg-green-800">
+                    <main id="conversation_section" class="flex flex-col gap-2 overflow-auto bg-green-800 h-[500px] p-2">
 
-                    <img src="../images/message-circle.svg" alt="" class="h-[30%] w-[18%] opacity-15 ">
+                    </main>
 
-                    <!-- create group form -->
-                    <form id="create_group_form" class="HIDDEN absolute bg-gray-800 p-8 rounded-md shadow-md">
-                        <label for="group_name" class="block text-white text-lg mb-2">Enter Group Name:</label>
-                        <input type="text" name="room_name" placeholder="Group Name" class="w-full px-3 py-2 mb-4 rounded-md border focus:outline-none focus:ring focus:border-blue-300">
-                        <button id="submit" type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 focus:outline-none focus:ring focus:border-blue-300">Create</button>
+                    <!-- send message section -->
+                    <form id="send_message_form" class="bg-gray-900 h-14 py-2 px-8 flex gap-2">
+                        <input type="hidden" name="contactId" value="">
+                        <input id="message_input" name="message_input" type="text" placeholder="Type a message" class="w-full border border-gray-500 py-2 px-6">
+                        <button type="submit" class="w-10 h-10 rounded-full bg-black flex justify-center items-center cursor-pointer">
+                            <ion-icon name="paper-plane-outline" class="text-white text-xl"></ion-icon>
+                        </button>
                     </form>
 
-                    <!-- create group button -->
-                    <div id="create_group_button" class="bg-green-500 absolute bottom-4 right-4 flex gap-1 items-center p-2 cursor-pointer rounded-md">
-                        <p>create group</p>
-                        <ion-icon name="add-circle" class="text-2xl"></ion-icon>
-                    </div>
+                    <!-- Group members section -->
+                    <main id="group_members_section" class=" absolute h-full w-full top-0 left-0 overflow-auto bg-red-400">
+                        
+                    </main>
+                    <!-- Add friend section -->
+                    <main id="add_friend_section" class="HIDDEN absolute h-full w-full top-0 left-0 bg-yellow-400">
 
+                    </main>
                 </section>
             </article>
         </section>
