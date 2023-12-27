@@ -14,8 +14,24 @@
             <a href="signup.php">
                 <ion-icon name="log-out-outline" class="text-3xl text-white"></ion-icon>
             </a>
-            <div class="flex items-center gap-1">
-                <?php require_once '../controllers/homeController/navInfo.php'; ?>
+            <div class="relative">
+                <div id="menu_list" class="flex items-center gap-1 cursor-pointer">
+                    <?php require_once '../controllers/homeController/navInfo.php'; ?>
+                </div>
+                <div class="absolute bg-white rounded-md p-2 pr-8 flex flex-col gap-2">
+                    <a href="homeGroups.php" class="flex items-center w-full gap-1">
+                        <ion-icon name="people" class="text-2xl"></ion-icon>
+                        <p>groups</p>
+                    </a>
+                    <a href="#" class="flex items-center w-full gap-1">
+                        <ion-icon name="man" class="text-2xl"></ion-icon>
+                        <p>friends</p>
+                    </a>
+                    <a href="#" class="flex items-center w-full gap-1">
+                        <ion-icon name="close" class="text-2xl"></ion-icon>
+                        <p>blocked</p>
+                    </a>
+                </div>
             </div>
         </nav>
         <section id="global-content" class="bg-gray-800 h-[90.9%] grid grid-cols-3">
