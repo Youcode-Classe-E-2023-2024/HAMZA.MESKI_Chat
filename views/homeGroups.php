@@ -41,7 +41,12 @@
         <section id="global-content" class="bg-gray-800 h-[90.9%] grid grid-cols-3">
             <!-- groups list -->
             <section id="content" class="h-full col-span-1 overflow-auto px-2">
+                <!-- my groups -->
                 <?php require_once '../controllers/roomsController/fetchRooms.php'; ?>
+                <!-- groups I belong to -->
+                <div id="groupsIbelong">
+                <?php require_once '../controllers/roomsController/roomsIbelong.php'; ?>
+                </div>
             </section>
 
             <!-- discussion section -->

@@ -56,6 +56,22 @@ class RoomDB {
         }
     }    
 
+    public function displayRoomByName($roomId) {
+        try {
+            $stmt = $this->pdo->prepare("SELECT * FROM room WHERE room_id = :roomId");
+            $stmt->bindParam(':roomId', $roomId, PDO::PARAM_INT);
+    
+            // Execute the statement
+            $stmt->execute();
+    
+            // Fetch the user as an associative array
+            $user = $stmt->fetch(PDO::FETCH_OBJ);
+    
+            return $user;
+        } catch (PDOException $e) {
+            die('Display failed: ' . $e->getMessage());
+        }
+    }
 
 }
 

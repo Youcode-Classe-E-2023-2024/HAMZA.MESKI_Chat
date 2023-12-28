@@ -3,7 +3,7 @@ session_start();
 require_once '../../models/MessagesDB.php';
 
 $message = $_POST['message_input'];
-$room_id = 1;
+$room_id = 0;
 $sender_id = $_SESSION['user-id'];
 $receiver_id = $_POST['contactId'];
 

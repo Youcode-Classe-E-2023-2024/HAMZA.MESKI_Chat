@@ -40,7 +40,12 @@
         <section id="global-content" class="bg-gray-800 h-[90.9%] grid grid-cols-3">
             <!-- groups list -->
             <section id="content" class="h-full col-span-1 overflow-auto px-2">
+                <!-- my groups -->
                 <?php require_once '../controllers/roomsController/fetchRooms.php'; ?>
+                <!-- groups I belong to -->
+                <div id="groupsIbelong">
+                <?php require_once '../controllers/roomsController/roomsIbelong.php'; ?>
+                </div>
             </section>
 
             <!-- discussion section -->
@@ -70,7 +75,7 @@
 
                     </main>
                     <!-- Add friend section -->
-                    <main id="add_friend_section" class=" absolute h-full w-full top-0 left-0 bg-gray-800">
+                    <main id="add_friend_section" class="HIDDEN absolute h-full w-full top-0 left-0 bg-gray-800">
                         <form id="add_friend_form" class="max-w-md mx-auto bg-green-500 p-8 rounded-md shadow-md mt-8">
                             <label class="block text-gray-700 text-sm font-bold mb-2">Select Friends:</label>
                             <input type="text" placeholder="Friend's name" class="w-full p-2 rounded-md border border-gray-300 mb-4">
@@ -98,6 +103,7 @@
     <script src="../views/scripts/createGroup.js"></script>
     <script src="../views/scripts/handleGroup.js"></script>
     <script src="../views/scripts/sendMessageRoom.js"></script>
+    <script src="../views/scripts/roomsIbelong.js"></script>
 </body>
 
 </html>
