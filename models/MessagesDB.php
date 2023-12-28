@@ -61,6 +61,23 @@ class MessagesDB {
             die('Query failed: ' . $e->getMessage());
         }
     }
+
+    public function getMessagesByRoomId($room_id) {
+        try {
+            $stmt = $this->pdo->prepare("SELECT * FROM messages WHERE room_id = :roomId");
+            $stmt->bindParam(':roomId', $room_id, PDO::PARAM_INT);
+    
+            // Execute the statement
+            $stmt->execute();
+    
+            // Fetch the user as an associative array
+            $user = $stmt->fetchAll(PDO::FETCH_OBJ);
+    
+            return $user;
+        } catch (PDOException $e) {
+            die('Display failed: ' . $e->getMessage());
+        }
+    }
 }
 
 $messages_database = new MessagesDB('localhost', 'chat', 'root', '');

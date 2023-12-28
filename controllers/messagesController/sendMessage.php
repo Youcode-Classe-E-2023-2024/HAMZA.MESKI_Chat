@@ -8,7 +8,6 @@ $sender_id = $_SESSION['user-id'];
 $receiver_id = $_POST['contactId'];
 
 $messages_database->insertMessage($message, $room_id, $sender_id, $receiver_id);
-// 
 
 $messages = $messages_database->getMessagesBySenderReceiver($sender_id, $receiver_id);
 // print_r($messages);

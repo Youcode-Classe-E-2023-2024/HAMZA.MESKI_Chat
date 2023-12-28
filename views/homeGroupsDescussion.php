@@ -58,7 +58,6 @@
 
                     <!-- send message section -->
                     <form id="send_message_form" class="bg-gray-900 h-14 py-2 px-8 flex gap-2">
-                        <input type="hidden" name="contactId" value="">
                         <input id="message_input" name="message_input" type="text" placeholder="Type a message" class="w-full border border-gray-500 py-2 px-6">
                         <button type="submit" class="w-10 h-10 rounded-full bg-black flex justify-center items-center cursor-pointer">
                             <ion-icon name="paper-plane-outline" class="text-white text-xl"></ion-icon>
@@ -67,7 +66,7 @@
 
                     <!-- Group members section -->
                     <div id="groupId" groupId="<?php echo $_POST['groupId'] ?>"></div>
-                    <main id="group_members_section" class="HIDDEN absolute h-full w-full top-0 left-0 overflow-auto bg-red-400">
+                    <main id="group_members_section" class="HIDDEN absolute h-full w-full top-0 left-0 overflow-auto bg-gray-800">
 
                     </main>
                     <!-- Add friend section -->
@@ -98,6 +97,7 @@
     <script src="../views/scripts/contactId.js"></script>
     <script src="../views/scripts/createGroup.js"></script>
     <script src="../views/scripts/handleGroup.js"></script>
+    <script src="../views/scripts/sendMessageRoom.js"></script>
 </body>
 
 </html>
