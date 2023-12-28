@@ -23,13 +23,17 @@
                         <ion-icon name="people" class="text-2xl"></ion-icon>
                         <p>groups</p>
                     </a>
-                    <a href="#" class="flex items-center w-full gap-1">
+                    <a href="homeFriends.php" class="flex items-center w-full gap-1">
                         <ion-icon name="man" class="text-2xl"></ion-icon>
                         <p>friends</p>
                     </a>
                     <a href="#" class="flex items-center w-full gap-1">
                         <ion-icon name="close" class="text-2xl"></ion-icon>
                         <p>blocked</p>
+                    </a>
+                    <a href="profil.php" class="flex items-center w-full gap-1">
+                        <ion-icon name="person" class="text-2xl"></ion-icon>
+                        <p>Profil</p>
                     </a>
                 </div>
             </div>
@@ -58,6 +62,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- local scripts -->
     <script src="../views/scripts/contactId.js"></script>
+    <script src="../views/scripts/friendRequest.js"></script>
 </body>
 
 </html>
