@@ -16,7 +16,7 @@
                 <a href="signup.php">
                     <ion-icon name="log-out-outline" class="text-3xl text-white"></ion-icon>
                 </a>
-                <a href="homeDescussion.php" class="text-white">back</a>
+                <a href="home.php" class="text-white">back</a>
             </div>
             <div class="relative">
                 <div id="menu_list" class="flex items-center gap-1 cursor-pointer">
